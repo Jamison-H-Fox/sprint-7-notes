@@ -47,10 +47,21 @@ table {
 	border-spacing: 0;
 }
 
+h3 {
+	padding: 1.25%;
+	font-size: 1.75rem;
+	font-family: sans-serif;
+}
+
 form {
-  display: flex;
-  flex-direction: column;
-  font-size: 2rem;
-  font-family: sans-serif;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+	font-family: sans-serif;
+	justify-content: center;
+	padding: 2.5%
+}
+
+button {
+	width: 5%;
 }
