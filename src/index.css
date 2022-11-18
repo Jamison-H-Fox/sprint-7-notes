@@ -63,12 +63,11 @@ form {
 	padding: 2.5%
 }
 
-form label {
-	display: flex;
-	flex-direction: row;
-	padding-top: 1%;
+form, label {
+	padding: 1% 0 1% 0;
 }
 
 button {
 	width: 5%;
+	margin: 1% 0 1% 0;
 }
