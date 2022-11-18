@@ -1,40 +1,54 @@
 import React, { useState } from "react";
+import '../index.css'
 
 function App() {
-  const [user, setUser] = useState({ username: "", password: "" });
+  const [form, setForm] = useState({ user: '', favShow: '', giveData: false, language: '' });
 
-  const handleChange = event => {
-    setUser({ ...user, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    setUser({ username: '', password:'' })
+  function handleChange(event) {
+    const { name, type, value, checked } = event.target;
+    const updatedInfo = type === 'checkbox' ? checked : value;
+    setForm({ ...form, [name]: updatedInfo});
   };
 
   return (
     <div className="App">
-      {console.log(user)}
-      <form onSubmit={event => handleSubmit(event)}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={user.username}
-            onChange={event => handleChange(event)}
+      <form>
+        <label>User
+          <input value={form.user} type='text' name='user' onChange={handleChange}/>
+        </label>
+
+        <label>Star Trek
+          <input 
+            value='starTrek' 
+            type='radio' 
+            name='favShow' 
+            onChange={handleChange}
+            checked={form.favShow ==='starTrek'}
           />
         </label>
-        <label>
-          Password:
-          <input
-            type="text"
-            name="password"
-            value={user.password}
-            onChange={event => handleChange(event)}
+
+        <label>Star Wars
+          <input 
+            value='starWars' 
+            type='radio' 
+            name='favShow' 
+            onChange={handleChange}
+            checked={form.favShow ==='starWars'}
           />
         </label>
-        <button>Submit!</button>
+
+        <label>Give away your data?
+          <input type='checkbox' name='giveData' onChange={handleChange}/>
+        </label>
+
+        <label>Language
+          <select name='language' onChange={handleChange}>
+            <option>--Select One--</option>
+            <option>JavaScript</option>
+            <option>Python</option>
+            <option>Java</option>
+          </select>
+        </label>
       </form>
     </div>
   );

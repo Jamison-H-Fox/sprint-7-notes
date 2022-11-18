@@ -9,8 +9,7 @@ function App() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(user.username);
-    console.log(user.password);
+    setUser({ username: '', password:'' })
   };
 
   return (
@@ -22,6 +21,7 @@ function App() {
           <input
             type="text"
             name="username"
+            value={user.username}
             onChange={event => handleChange(event)}
           />
         </label>
@@ -30,6 +30,7 @@ function App() {
           <input
             type="text"
             name="password"
+            value={user.password}
             onChange={event => handleChange(event)}
           />
         </label>
