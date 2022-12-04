@@ -47,9 +47,6 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ color: 'red' }}>
-        <div>{errors.user}</div><div>{errors.favShow}</div><div>{errors.giveData}</div><div>{errors.language}</div>
-      </div>
       <form onSubmit={submit}>
         <label>User:
           <input value={form.user} type='text' name='user' onChange={handleChange}/>
@@ -89,6 +86,9 @@ function App() {
         </label>
         <button disabled={disabled}>submit</button>
       </form>
+      <div style={{ color: 'red' }}>
+        <div>{errors.user}</div><div>{errors.favShow}</div><div>{errors.giveData}</div><div>{errors.language}</div>
+      </div>
     </div>
   );
 }
